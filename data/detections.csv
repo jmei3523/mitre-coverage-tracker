@@ -1,0 +1,16 @@
+detection_id,name,technique_id,tactic,platform,severity,status,notes
+DET-001,Suspicious PowerShell Encoded Command,T1059.001,Execution,Windows,High,Active,Covers -enc and -EncodedCommand flags
+DET-002,Scheduled Task Created via schtasks.exe,T1053.005,Persistence,Windows,Medium,Active,Monitors schtasks.exe process creation
+DET-003,Registry Run Key Modified,T1547.001,Persistence,Windows,Medium,Active,Watches HKCU and HKLM Run keys
+DET-004,LSASS Memory Access by Non-System Process,T1003.001,Credential Access,Windows,Critical,Active,Requires Sysmon Event ID 10
+DET-005,Net User Account Discovery,T1087.001,Discovery,Windows,Low,Active,Flags net user and net localgroup commands
+DET-006,PsExec Lateral Movement,T1021.002,Lateral Movement,Windows,High,Active,Detects PsExec via named pipe and service creation
+DET-007,Certutil Used to Download File,T1105,Command And Control,Windows,High,Active,Certutil -urlcache abuse
+DET-008,Base64 Encoded PowerShell via cmd.exe,T1059.001,Execution,Windows,High,Active,Duplicate technique covered by DET-001 with different parent
+DET-009,New Local Admin Account Created,T1136.001,Persistence,Windows,High,Active,Monitors net user /add with admin group membership
+DET-010,WMIC Remote Process Execution,T1047,Execution,Windows,High,Active,Flags wmic /node process call create
+DET-011,Mimikatz Keyword in CommandLine,T1003.001,Credential Access,Windows,Critical,Active,String match only - easily evaded
+DET-012,SMB Connection to Admin Shares,T1021.002,Lateral Movement,Windows,Medium,Testing,Noisy in some environments
+DET-013,Suspicious Cron Job Added,T1053.003,Persistence,Linux,Medium,Active,Monitors /etc/cron.d and crontab -e
+DET-014,Curl or Wget to External IP,T1105,Command And Control,Linux,Medium,Active,Flags direct IP downloads bypassing DNS
+DET-015,Whoami Executed After Service Start,T1033,Discovery,Windows,Low,Disabled,Too noisy - pending tuning
