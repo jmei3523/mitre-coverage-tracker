@@ -31,3 +31,18 @@ def get_coverage_by_tactic(df):
     )
     coverage.columns = ["tactic", "techniques_covered"]
     return coverage
+
+# Returns techniques that have no active detection covering them
+def get_coverage_gaps(df):
+    active =df[df["status"] == "Active"]
+
+    # All unique techniques that appear anywhere in the catalog
+    all_techniques = df["technique_id", "tactic"].drop_duplicates()
+
+    # Techniques that have at least one active detection
+    covered = set(active["technique_id"].unique())
+
+    # Keep only rows where technique is NOT in the covered set
+    gaps = all_techniques[~all_techniques["technique_id"].isin(covered)]
+    return gaps.reset_index(drop=True)
+
