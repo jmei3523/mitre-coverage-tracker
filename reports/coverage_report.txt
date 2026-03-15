@@ -1,0 +1,20 @@
+=== MITRE ATT&CK Coverage Report ===
+
+Total detections in catalog : 15
+Active detections           : 13
+Techniques in catalog       : 11
+Techniques with coverage    : 10
+Coverage                    : 90.9%
+
+--- Coverage by Tactic ---
+
+  Command And Control       1 technique(s) covered
+  Credential Access         1 technique(s) covered
+  Discovery                 1 technique(s) covered
+  Execution                 2 technique(s) covered
+  Lateral Movement          1 technique(s) covered
+  Persistence               4 technique(s) covered
+
+--- Coverage Gaps ---
+
+  T1033           Discovery
