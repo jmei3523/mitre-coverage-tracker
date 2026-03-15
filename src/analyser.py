@@ -37,7 +37,7 @@ def get_coverage_gaps(df):
     active =df[df["status"] == "Active"]
 
     # All unique techniques that appear anywhere in the catalog
-    all_techniques = df["technique_id", "tactic"].drop_duplicates()
+    all_techniques = df[["technique_id", "tactic"]].drop_duplicates()
 
     # Techniques that have at least one active detection
     covered = set(active["technique_id"].unique())
