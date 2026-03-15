@@ -18,3 +18,16 @@ def get_coverage_summary(df):
         "total_techniques": total_techniques,
         "covered_techniques": covered_techniques,
     }
+
+# Returns a dict showing how many techniques are covered per tatic
+def get_coverage_by_tactic(df):
+    active = df[df["status"] == "Active"]
+    
+    # Group active detections by tatic and count unique techniques in each coverage
+    coverage = (
+        active.groupby("tactic")["technique_id"]
+        .nunique()
+        .reset_index()
+    )
+    coverage.columns = ["tactic", "techniques_covered"]
+    return coverage
