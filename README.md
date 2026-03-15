@@ -4,9 +4,6 @@ A small Python CLI tool I built to practice detection engineering concepts.
 It reads a CSV of detection rules, maps them to MITRE ATT&CK techniques, and
 tells you where your coverage gaps are.
 
-I'm studying cybersecurity and wanted to understand how SOC teams actually
-measure detection coverage — so I built this to figure it out.
-
 ---
 
 ## What it does
@@ -17,15 +14,6 @@ measure detection coverage — so I built this to figure it out.
 - Breaks coverage down by tactic so you can see which attack phases are weak
 - Lists techniques with no active detection (the gaps)
 - Saves the report to the `reports/` folder
-
----
-
-## Why I built this
-
-I kept reading about MITRE ATT&CK coverage in detection engineering blogs and
-job descriptions but couldn't find a simple tool that showed how it actually works.
-The core idea is: having 200 detection rules doesn't mean much if they all cover
-the same 3 techniques. This tool makes that visible.
 
 ---
 
@@ -117,7 +105,7 @@ Coverage                    : 90.9%
 
 ---
 
-## What I want to add next
+## What I want to add next in v1.2
 
 - [ ] Pull the full ATT&CK technique list from MITRE's STIX data so gaps are measured against the real matrix
 - [ ] JSON output for use with dashboards
